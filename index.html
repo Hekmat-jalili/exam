@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExaminationPage</title>
+    <link rel="stylesheet" href="complete bootstrap//css/bootstrap.css">
+    <style>
+        body {
+            background-color: rgb(233, 211, 234);
+        }
+
+        #information {
+            float: left;
+            margin-left: 200px;
+            background-color: teal;
+        }
+
+        #container {
+            margin-left: 20px;
+        }
+
+        #result {
+            background-color: unset;
+        }
+
+        span {
+            background-color: gray;
+        }
+
+        .myphoto {
+            margin-top: 100px;
+            border-radius: 100px;
+        }
+    </style>
+    <script>
+
+        function giveOutput() {
+            var studentname = document.getElementById("studentName").value;
+            var rollnumbers = parseInt(document.getElementById("rollnumber").value);
+            var date = document.getElementById("date").value;
+            var subjectone = document.getElementById("subjectone").value;
+            var markone = parseInt(document.getElementById("markone").value);
+            var subjecttwo = document.getElementById("subjecttwo").value;
+            var marktwo = parseInt(document.getElementById("marktwo").value);
+            var subjectthrees = document.getElementById("subjectThree").value;
+            var markthree = parseInt(document.getElementById("markthird").value);
+            var subjectfour = document.getElementById("subjectfour").value;
+            var markfour = parseInt(document.getElementById("markfour").value);
+            var subjectfive = document.getElementById("subjectfive").value;
+            var markfive = parseInt(document.getElementById("markfive").value);
+
+
+            var totals = markone + marktwo + markthree + markfour + markfive;
+
+
+
+            document.getElementById("student_name_here").innerHTML = studentname;
+            document.getElementById("rollnumberresult").innerHTML = rollnumbers;
+            document.getElementById("datehere").innerHTML = date;
+            document.getElementById("subject_name1here").innerHTML = subjectone;
+            document.getElementById("subject_marks1here").innerHTML = markone;
+            document.getElementById("subject_name2here").innerHTML = subjecttwo;
+            document.getElementById("subject_marks2here").innerHTML = marktwo;
+            document.getElementById("subject_name3here").innerHTML = subjectthrees;
+            document.getElementById("thirdmarks").innerHTML = markthree;
+            document.getElementById("subject_name4here").innerHTML = subjectfour;
+            document.getElementById("subject_marks4here").innerHTML = markfour;
+            document.getElementById("subject_name5here").innerHTML = subjectfive;
+            document.getElementById("subject_marks5here").innerHTML = markfive;
+
+
+
+            document.getElementById("totalHere").innerHTML = totals;
+            averages = totals / (500) * 100;
+
+
+
+
+            var grade = "";
+            if (averages >= 90) {
+                grade = "A";
+            }
+            else if (averages >= 80) {
+                grade = "B";
+            }
+            else if (averages >= 70) {
+                grade = "C";
+            }
+            else if (averages >= 60) {
+                grade = "D";
+            }
+            else if (averages >= 50) {
+                grade = "E";
+            }
+            else if (averages < 50) {
+                grade = "F";
+            }
+
+            document.getElementById("average").innerHTML = averages + " %";
+            document.getElementById("gradeHere").innerHTML = grade;
+
+
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <center>
+            <img src="imgs/Hekmat.jpg" width="300px" height="auto" alt="This is my photo" class="myphoto">
+            <h1>This is my website LogO</h1>
+            <p>I am one of the Bcs Student in AFG....</p>
+        </center>
+    </div>
+    <div class="container">
+        <table>
+
+            <form action="">
+
+                <tr>
+                    <fieldset class="form-group">
+                        <td><label for="">StudentName</label>
+                            <input type="text" id="studentName" class="form-control">
+                        </td>
+                    </fieldset>
+
+
+                </tr>
+
+
+                <tr>
+                    <fieldset class="form-group">
+                        <td><label for="">#Roll-Number</label>
+                            <input type="number" id="rollnumber" class="form-control">
+                        </td>
+                    </fieldset>
+
+                </tr>
+
+                <tr>
+                    <fieldset class="form-group">
+                        <td><label for="">Date</label>
+                            <input type="date" id="date" class="form-control">
+                        </td>
+                    </fieldset>
+
+                </tr>
+                </tr>
+
+                <tr>
+
+                <tr>
+                    <!-- marks Number one -->
+                    <fieldset class="form-group">
+                        <td><label for="">subject-1-Name</label>
+                            <input type="text" id="subjectone" class="form-control">
+                        </td>
+                    </fieldset>
+
+
+                    <fieldset class="form-group">
+                        <td><label for="">subject-1-marks</label>
+                            <input type="number" id="markone" class="form-control">
+                        </td>
+                    </fieldset>
+
+                </tr>
+
+
+                </tr>
+
+                <!-- marks Number two -->
+
+
+                <tr>
+
+                <tr>
+                    <!-- marks Number one -->
+                    <fieldset class="form-group">
+                        <td><label for="">subject-2-Name</label>
+                            <input type="text" id="subjecttwo" class="form-control">
+                        </td>
+                    </fieldset>
+
+
+                    <fieldset class="form-group">
+                        <td><label for="">subject-2-marks</label>
+                            <input type="number" id="marktwo" class="form-control">
+                        </td>
+                    </fieldset>
+
+                </tr>
+
+
+                </tr>
+
+
+                <!-- subject number three -->
+
+
+
+                <tr>
+
+                <tr>
+                    <!-- marks Number one -->
+                    <fieldset class="form-group">
+                        <td><label for="">subject-3-Name</label>
+                            <input type="text" id="subjectThree" class="form-control">
+                        </td>
+                    </fieldset>
+
+
+                    <fieldset class="form-group">
+                        <td><label for="">subject-3-marks</label>
+                            <input type="number" id="markthird" class="form-control">
+                        </td>
+                    </fieldset>
+
+                </tr>
+
+
+                </tr>
+
+                <!-- subject number four -->
+
+
+                <tr>
+
+                <tr>
+
+                    <fieldset class="form-group">
+                        <td><label for="">subject-4-Name</label>
+                            <input type="text" id="subjectfour" class="form-control">
+                        </td>
+                    </fieldset>
+
+
+                    <fieldset class="form-group">
+                        <td><label for="">subject-4-marks</label>
+                            <input type="number" id="markfour" class="form-control">
+                        </td>
+                    </fieldset>
+
+                </tr>
+
+
+                </tr>
+
+
+                <!-- subject number five -->
+
+
+                <tr>
+
+                <tr>
+                    <!-- marks Number one -->
+                    <fieldset class="form-group">
+                        <td><label for="">subject-5-Name</label>
+                            <input type="text" id="subjectfive" class="form-control">
+                        </td>
+                    </fieldset>
+
+
+                    <fieldset class="form-group">
+                        <td><label for="">subject-5-marks</label>
+                            <input type="number" id="markfive" class="form-control">
+                        </td>
+                    </fieldset>
+
+                </tr>
+
+
+                </tr>
+
+                </tr>
+
+
+
+
+
+
+
+
+            </form>
+
+            <tr>
+                <td></td>
+                <td><button style="margin-top:20px;" class="btn btn-primary"
+                        onclick="giveOutput();">Submit-information</button></td>
+            </tr>
+
+        </table>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <!-- second Results Table in this program -->
+    <span>
+        <center>
+            <div class="container">
+                <div class="heading">
+                    <h1>Examination Sheet</h1>
+                    <table id="info" cellspacing="30px" cellpadding="30px">
+
+                        <tr>
+                            <th>Student-Name</th>
+                            <td id="student_name_here"></td>
+                            <th><i>#Roll-Number</i></th>
+                            <td id="rollnumberresult"></td>
+                            <th>Date</th>
+                            <td id="datehere"></td>
+                        </tr>
+                    </table>
+                    <br><br><br>
+                    <table id="result" border="1px solid red" cellspacing="30px" cellpadding="30px">
+
+                        <tr>
+                            <th>Subject-Names</th>
+                            <th>obtained-marks</th>
+                            <th>Out-of</th>
+
+                        </tr>
+                        <tr>
+                            <td id="subject_name1here"></td>
+                            <td id="subject_marks1here"></td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td id="subject_name2here"></td>
+                            <td id="subject_marks2here"></td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td id="subject_name3here"></td>
+                            <td id="thirdmarks"></td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td id="subject_name4here"></td>
+                            <td id="subject_marks4here"></td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td id="subject_name5here"></td>
+                            <td id="subject_marks5here"></td>
+                            <td>100</td>
+                        </tr>
+                    </table>
+                    <br><br><br>
+                    <br>
+                    <table cellspacing="19px" cellpadding="19px">
+                        <tr>
+                            <th>Total</th>
+                            <td id="totalHere"></td>
+                            <th>Average</th>
+                            <td id="average"></td>
+                            <th>Grade</th>
+                            <td id="gradeHere"></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </center>
+    </span>
+
+    <footer>
+        <div style="margin-top:40px;" class="container">
+            <center>
+                <h1>&copy;Hekmat❤️Developer.com</h1>
+            </center>
+        </div>
+    </footer>
+</body>
+
+</html>
